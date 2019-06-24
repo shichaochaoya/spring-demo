@@ -23,4 +23,17 @@ Spring概述
         1.使用类构造器实例化（默认无参）
         2.使用静态工厂方法实例化（简单工厂模式）
         3.使用实例工厂方法实例化（工厂方法模式）
+          Spring的属性注入
+            三种方式：
+                构造函数注入
+                属性setter注入
+                p名称空间，（spring2.5开始引入）
+                接口注入
+            spring支持前三种
 
+      二：注解方式
+        Spring2.5引入注解
+        -@Component 描述Spring框架中Bean
+        -@Repository 用于对DAO层实现类进行标注
+        -@Service 对Service实现类进行标注
+        -@Controller 对Controller实现类进行标注

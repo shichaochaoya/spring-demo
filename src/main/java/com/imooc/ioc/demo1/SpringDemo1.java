@@ -54,7 +54,7 @@ public class SpringDemo1 {
      * */
     public void demo3(){
         //创建Spring的工厂类
-        ApplicationContext applicationContext = new FileSystemXmlApplicationContext("D:\\applicationContext.xml");
+        ApplicationContext applicationContext = new FileSystemXmlApplicationContext("D:\\applicationContext2.xml");
         UserService userService = (UserService) applicationContext.getBean("userService");
 
         userService.sayHello();
@@ -78,7 +78,7 @@ public class SpringDemo1 {
      * */
     public void demo5(){
         //创建工厂类
-        BeanFactory beanFactory = new XmlBeanFactory(new FileSystemResource("D:\\applicationContext.xml"));
+        BeanFactory beanFactory = new XmlBeanFactory(new FileSystemResource("D:\\applicationContext2.xml"));
         //通过工厂获得类
         UserService userService = (UserService) beanFactory.getBean("userService");
         userService.sayHello();
