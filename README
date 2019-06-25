@@ -37,3 +37,4 @@ Spring概述
         -@Repository 用于对DAO层实现类进行标注
         -@Service 对Service实现类进行标注
         -@Controller 对Controller实现类进行标注
+        -@Resource 对JSR-250的注解（和@Autowired注解功能类似）
