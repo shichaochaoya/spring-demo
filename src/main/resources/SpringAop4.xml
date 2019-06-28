@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <!--配置目标类-->
+    <bean class="com.imooc.aop.demo6.StudentDaoImpl" id="studentDao"/>
+    <bean class="com.imooc.aop.demo6.CustomeDao" id="customeDao"/>
+
+    <!--配置增强-->
+    <bean class="com.imooc.aop.demo6.MyBeforeAdvice" id="myBeforeAdvice"/>
+    <bean class="com.imooc.aop.demo6.MyAroundAdvice" id="myAroundAdvice"/>
+
+    <!--在类的产生过程中自动生成代理 基于切面信息进行代理-->
+    <bean id="myAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
+        <property name="pattern" value="com.imooc.aop.demo6.CustomeDao.save"/>
+        <property name="advice" ref="myAroundAdvice"/>
+    </bean>
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+</beans>
